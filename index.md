@@ -10,11 +10,10 @@ This is my GitHub Pages site. Here are some useful links:
 - [About Me](/about/)
 
 
-[View my notebook](finance/Bible Rag Actual.ipynb)
+[View my notebook](finance/Bible%20Rag%20Actual.ipynb)
 
 
-[View my notebook](finance/Bible Rag Actual.ipynb)
-
+ 
 ---
 
 ## 📓 Jupyter Notebooks
