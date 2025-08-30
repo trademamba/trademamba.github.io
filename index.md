@@ -10,7 +10,7 @@ This is my GitHub Pages site. Here are some useful links:
 - [About Me](/about/)
 
 
-[View my notebook](finance/my_notebook.ipynb)
+[View my notebook](finance/Bible Rag Actual.ipynb)
 
 
 [View my notebook](finance/Bible Rag Actual.ipynb)
