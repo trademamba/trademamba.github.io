@@ -8,6 +8,7 @@ This is my GitHub Pages site. Here are some useful links:
 - [AMD Tutorials](/amdtutorials/)  
 - [Finance Notes](/finance/)  
 - [About Me](/about/)
+- [View my notebook](finance/Bible Rag Actual.ipynb)
 
 ---
 
