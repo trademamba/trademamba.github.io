@@ -1,0 +1,28 @@
+---
+layout: default
+title: "My Tutorials"
+---
+
+# Welcome to TradeMamba 🎉
+
+Here are my latest Medium posts:
+
+<div style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+  {% assign posts = site.data.medium.items | default: [] %}
+  {% if posts.size == 0 %}
+    <p>No Medium posts found yet. <a href="https://medium.com/@TradeMamba">See Medium profile →</a></p>
+  {% endif %}
+  {% for p in posts %}
+    <article style="border:1px solid #eee;border-radius:12px;overflow:hidden;">
+      {% if p.image %}
+        <a href="{{ p.url }}"><img src="{{ p.image }}" alt="" style="width:100%;display:block;"></a>
+      {% endif %}
+      <div style="padding:0.9rem;">
+        <h3 style="margin:0 0 .4rem 0;"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+        {% if p.published %}<small>{{ p.published }}</small>{% endif %}
+        <p style="margin:.6rem 0 0 0;">{{ p.excerpt }}</p>
+        <p style="margin:.6rem 0 0 0;"><a href="{{ p.url }}">Read on Medium →</a></p>
+      </div>
+    </article>
+  {% endfor %}
+</div>
