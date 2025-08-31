@@ -1,3 +1,17 @@
+---
+layout: post
+title: "Bible RAG: Fast, Clean Notebook Walkthrough"
+description: "From Jupyter to a blog-style post with code, outputs, and a table of contents."
+tags: [notebooks, jupyter, rag, finance]
+categories: [tutorials]
+permalink: /blog/bible-rag-actual/
+# if you want math:
+mathjax: true
+# optional: show date in header; Minima shows it by default
+---
+
+
+
 # Libraries to Install
 
 
