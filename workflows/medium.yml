@@ -1,0 +1,56 @@
+name: Medium → JSON
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 3 * * *"   # daily 03:23 UTC
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Pull Medium RSS and write _data/medium.json
+        run: |
+          pip install feedparser beautifulsoup4
+          python - <<'PY'
+          import json, datetime, pathlib, feedparser
+          from bs4 import BeautifulSoup
+          HANDLE = "TradeMamba"  # <-- change if needed (no @)
+          feed = feedparser.parse(f"https://medium.com/feed/@{HANDLE}")
+
+          def first_img(html):
+              soup = BeautifulSoup(html, "html.parser")
+              img = soup.find("img")
+              return img["src"] if img and img.has_attr("src") else None
+
+          items = []
+          for e in feed.entries[:24]:
+              content = e.get("content", [{}])[0].get("value", e.get("summary", ""))
+              text = BeautifulSoup(content, "html.parser").get_text(" ", strip=True)
+              items.append({
+                  "title": e.title,
+                  "url": e.link,
+                  "published": e.get("published", ""),
+                  "image": first_img(content),
+                  "excerpt": (text[:240] + "…") if len(text) > 240 else text
+              })
+
+          pathlib.Path("_data").mkdir(exist_ok=True)
+          with open("_data/medium.json", "w", encoding="utf-8") as f:
+              json.dump({
+                "updated": datetime.datetime.utcnow().isoformat()+"Z",
+                "items": items
+              }, f, ensure_ascii=False, indent=2)
+          PY
+
+      - name: Commit updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/medium.json
+          git commit -m "Update Medium feed" || echo "No changes"
+          git push
