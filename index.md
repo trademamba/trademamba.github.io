@@ -1,3 +1,9 @@
+---
+layout: home
+title: "My Tutorials"
+---
+
+
 # Welcome to TradeMamba 🎉
 
 This is my GitHub Pages site. Here are some useful links:
