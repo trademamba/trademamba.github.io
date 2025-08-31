@@ -7,6 +7,10 @@ title: "My Tutorials"
 
 This is my GitHub Pages site. Here are some useful links:
 
+## ✍️ My Blog Posts
+Check out my latest Medium articles here: [Medium Posts →](/medium/)
+
+
 ## 🔗 Subpages
 - [AMD Tutorials]({{ "/amdtutorials/" | relative_url }})
 - [Finance Notes]({{ "/finance/" | relative_url }})
