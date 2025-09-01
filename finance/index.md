@@ -4,7 +4,8 @@
 
 
 # Call Rolling Algo Version 1
-For a short call expiring $S$
+For a short call expiring today $C$. We find the value of $C_1,\dots C_n$ the value of rolling the call to the next $1,\dots,n$ strikes.
+
 
 # To Dos
 
