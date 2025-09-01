@@ -1,3 +1,6 @@
+# Call Rolling Algo Version 1
+For a short call expiring $S$
+
 # To Dos
 
 1. Make sure you don't get wiped out with expiring bull calls (i.e. 162.5/165 bull call spreads)
