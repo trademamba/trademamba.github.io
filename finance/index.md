@@ -1,3 +1,8 @@
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
 # Call Rolling Algo Version 1
 For a short call expiring $S$
 
